@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A365D" />
+      <stop offset="100%" stop-color="#2B6CB0" />
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="url(#logoGrad)" />
+  <!-- Rupee Symbol & Shield Accent -->
+  <path d="M14 13h12M14 17h10M14 13v15M14 21h5c3 0 4-1 4-2.5S22 16 19 16M19 21l6 8" 
+        stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <circle cx="28" cy="12" r="3" fill="#63B3ED" />
+</svg>

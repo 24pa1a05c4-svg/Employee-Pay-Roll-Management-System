@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payroll Processing - Employee Payroll Management System</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="/dashboard.html" class="brand-link">
+          <div class="brand-icon"><img src="/images/logo.svg" alt="Payroll Logo" width="32" height="32"></div>
+          <span class="brand-text">TechNova HR</span>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div>
+          <div class="nav-section-title">Menu</div>
+          <ul class="nav-list">
+            <li>
+              <a href="/dashboard.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
+                <span class="nav-text">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-admin-only">
+          <div class="nav-section-title">Organization & HR</div>
+          <ul class="nav-list">
+            <li>
+              <a href="/employees.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></span>
+                <span class="nav-text">Employees</span>
+              </a>
+            </li>
+            <li>
+              <a href="/departments.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></span>
+                <span class="nav-text">Departments</span>
+              </a>
+            </li>
+            <li>
+              <a href="/attendance.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
+                <span class="nav-text">Attendance</span>
+              </a>
+            </li>
+            <li>
+              <a href="/leave.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></span>
+                <span class="nav-text">Leave Requests</span>
+              </a>
+            </li>
+            <li>
+              <a href="/payroll.html" class="nav-link active">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                <span class="nav-text">Payroll Processing</span>
+              </a>
+            </li>
+            <li>
+              <a href="/reports.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></span>
+                <span class="nav-text">Reports & Analytics</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">My Account</div>
+          <ul class="nav-list">
+            <li>
+              <a href="/profile.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></span>
+                <span class="nav-text">My Profile & Payslips</span>
+              </a>
+            </li>
+            <li>
+              <button type="button" class="nav-link" onclick="App.handleLogout()" style="width:100%; text-align:left; color:#F87171;">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg></span>
+                <span class="nav-text">Sign Out</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div class="topbar-search">
+            <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="text" placeholder="Search..." onkeydown="if(event.key==='Enter') window.location.href='/employees.html?search='+encodeURIComponent(this.value)">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="user-profile-menu" onclick="window.location.href='/profile.html'">
+            <div class="user-avatar" id="userAvatar">A</div>
+            <div class="user-info-text">
+              <span class="user-name-display" id="userName">Admin</span>
+              <span class="user-role-display" id="userRole">Administrator</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="App.handleLogout()"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg></button>
+        </div>
+      </header>
+
+      <div class="content-container">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Monthly Payroll Processing</h1>
+            <p class="page-subtitle">Calculate earnings, statutory deductions, unpaid leave (LWP), review and finalize payroll runs.</p>
+          </div>
+        </div>
+
+        <!-- 1. Calculation Controls Card -->
+        <div class="card" style="margin-bottom:2rem;">
+          <div class="card-header">
+            <h3 class="card-title">Run Payroll Workflow</h3>
+            <span style="font-size:0.8rem; color:var(--color-text-muted);">Step 1: Select Period &rarr; Step 2: Preview &rarr; Step 3: Approve & Finalize</span>
+          </div>
+          <div class="card-body">
+            <div style="display:flex; align-items:flex-end; gap:1.25rem; flex-wrap:wrap;">
+              <div class="form-group" style="margin:0; width:160px;">
+                <label for="payrollMonth" class="form-label required">Payroll Month</label>
+                <select id="payrollMonth" class="form-select">
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin:0; width:130px;">
+                <label for="payrollYear" class="form-label required">Payroll Year</label>
+                <select id="payrollYear" class="form-select"></select>
+              </div>
+
+              <div class="form-group" style="margin:0; width:140px;">
+                <label for="payrollWorkingDays" class="form-label">Working Days</label>
+                <input type="number" id="payrollWorkingDays" class="form-control" placeholder="Default: 30" min="1" max="31">
+              </div>
+
+              <button type="button" id="previewPayrollBtn" class="btn btn-primary" style="height:40px;">
+                Preview Payroll
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Calculation Preview Box (Hidden until calculated) -->
+        <div id="payrollPreviewContainer" style="display:none; margin-bottom:2.5rem;">
+          <div class="payroll-preview-header">
+            <div class="preview-stat-item">
+              <span class="preview-stat-label">Payroll Period</span>
+              <span class="preview-stat-val" id="previewPeriodText">-</span>
+            </div>
+            <div class="preview-stat-item">
+              <span class="preview-stat-label">Eligible Staff</span>
+              <span class="preview-stat-val" id="previewEmployeeCount">0</span>
+            </div>
+            <div class="preview-stat-item">
+              <span class="preview-stat-label">Working Days</span>
+              <span class="preview-stat-val" id="previewWorkingDays">30 Days</span>
+            </div>
+            <div class="preview-stat-item">
+              <span class="preview-stat-label">Total Gross</span>
+              <span class="preview-stat-val" id="previewTotalGross">₹0.00</span>
+            </div>
+            <div class="preview-stat-item">
+              <span class="preview-stat-label">Total Deductions</span>
+              <span class="preview-stat-val" id="previewTotalDeductions" style="color:#FDE68A;">₹0.00</span>
+            </div>
+            <div class="preview-stat-item">
+              <span class="preview-stat-label">Net Disbursed</span>
+              <span class="preview-stat-val" id="previewTotalNet" style="color:#A7F3D0;">₹0.00</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Calculated Employee Records</h3>
+              <button type="button" id="saveDraftBtn" class="btn btn-success">
+                Process & Save Draft
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Department</th>
+                    <th>Attendance</th>
+                    <th>Unpaid Leaves</th>
+                    <th>Basic</th>
+                    <th>Gross</th>
+                    <th>Deductions</th>
+                    <th>Net Salary</th>
+                    <th>Breakdown</th>
+                  </tr>
+                </thead>
+                <tbody id="previewTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Active Payroll Run Management Details (When viewing a specific run) -->
+        <div id="payrollDetailsContainer" style="display:none; margin-bottom:2.5rem;">
+          <div class="card" style="border:2px solid var(--color-accent);">
+            <div class="card-header" style="background:#F0F9FF; display:flex; justify-content:space-between; align-items:center;" id="runDetailsHeader">
+              <div>Loading...</div>
+            </div>
+            <div class="card-body">
+              <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-bottom:1.25rem;" id="runActionButtons"></div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Payslip Ref</th>
+                      <th>Employee</th>
+                      <th>Department</th>
+                      <th>Basic Salary</th>
+                      <th>Gross Salary</th>
+                      <th>Deductions</th>
+                      <th>Net Salary</th>
+                      <th>Payslip PDF</th>
+                    </tr>
+                  </thead>
+                  <tbody id="runRecordsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Payroll Runs History -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Payroll Run History</h3>
+            <span style="font-size:0.85rem; color:var(--color-text-muted);">Immutable audit-tracked history</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Run Date</th>
+                  <th>Headcount</th>
+                  <th>Gross Total</th>
+                  <th>Total Deductions</th>
+                  <th>Net Payable</th>
+                  <th>Status</th>
+                  <th>Manage</th>
+                </tr>
+              </thead>
+              <tbody id="payrollRunsTableBody">
+                <tr><td colspan="7" class="empty-state"><div class="spinner"></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Salary Breakdown Modal -->
+  <div class="modal" id="payrollBreakdownModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog lg">
+      <div class="modal-header">
+        <h3 class="modal-title" id="payrollBreakdownTitle">Salary Calculation Breakdown</h3>
+        <button type="button" class="modal-close-btn" onclick="Modal.close('payrollBreakdownModal')">&times;</button>
+      </div>
+      <div class="modal-body" id="payrollBreakdownBody"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="Modal.close('payrollBreakdownModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reversal Modal -->
+  <div class="modal" id="reversalModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Authorize Payroll Reversal</h3>
+        <button type="button" class="modal-close-btn" onclick="Modal.close('reversalModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="reversalRunId">
+        <p style="margin-bottom:1rem; font-size:0.95rem;">
+          You are initiating a reversal workflow for period <strong id="reversalPeriodText">-</strong>.
+        </p>
+        <p style="color:var(--color-text-muted); font-size:0.85rem; margin-bottom:1.25rem;">
+          Finalized payroll records are locked against accidental alteration. Authorizing a reversal unlocks the payroll run back to Draft status and logs an immutable audit trail entry with your explanation.
+        </p>
+        <div class="form-group">
+          <label for="reversalReason" class="form-label required">Audit Explanation / Reversal Reason</label>
+          <textarea id="reversalReason" class="form-control" rows="3" placeholder="Explain why adjustments are required (min 5 characters)" required></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="Modal.close('reversalModal')">Cancel</button>
+        <button type="button" class="btn btn-danger" onclick="handleReversalSubmit()">Authorize Reversal</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="/js/toast.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/payroll.js"></script>
+</body>
+</html>

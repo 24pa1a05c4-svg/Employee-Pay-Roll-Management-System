@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Employee Payroll Management System</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+      font-family: var(--font-primary);
+      padding: var(--spacing-4);
+    }
+    .error-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-8) var(--spacing-6);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .error-code {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--primary-600);
+      line-height: 1;
+      margin-bottom: var(--spacing-3);
+      letter-spacing: -2px;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-2);
+    }
+    .error-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: var(--spacing-6);
+    }
+    .error-actions {
+      display: flex;
+      gap: var(--spacing-3);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-card">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">
+      The page or resource you are looking for does not exist, has been removed, or requires appropriate permissions.
+    </p>
+    <div class="error-actions">
+      <a href="/dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+      <a href="/login.html" class="btn btn-secondary">Login</a>
+    </div>
+  </div>
+</body>
+</html>

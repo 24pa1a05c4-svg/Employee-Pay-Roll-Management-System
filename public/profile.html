@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile & Payslips - Employee Payroll Management System</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="/dashboard.html" class="brand-link">
+          <div class="brand-icon"><img src="/images/logo.svg" alt="Payroll Logo" width="32" height="32"></div>
+          <span class="brand-text">TechNova HR</span>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div>
+          <div class="nav-section-title">Menu</div>
+          <ul class="nav-list">
+            <li>
+              <a href="/dashboard.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span>
+                <span class="nav-text">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-admin-only">
+          <div class="nav-section-title">Organization & HR</div>
+          <ul class="nav-list">
+            <li>
+              <a href="/employees.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></span>
+                <span class="nav-text">Employees</span>
+              </a>
+            </li>
+            <li>
+              <a href="/departments.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></span>
+                <span class="nav-text">Departments</span>
+              </a>
+            </li>
+            <li>
+              <a href="/attendance.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span>
+                <span class="nav-text">Attendance</span>
+              </a>
+            </li>
+            <li>
+              <a href="/leave.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></span>
+                <span class="nav-text">Leave Requests</span>
+              </a>
+            </li>
+            <li>
+              <a href="/payroll.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                <span class="nav-text">Payroll Processing</span>
+              </a>
+            </li>
+            <li>
+              <a href="/reports.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></span>
+                <span class="nav-text">Reports & Analytics</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">My Account</div>
+          <ul class="nav-list">
+            <li>
+              <a href="/profile.html" class="nav-link active">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></span>
+                <span class="nav-text">My Profile & Payslips</span>
+              </a>
+            </li>
+            <li class="nav-employee-only">
+              <a href="/leave.html" class="nav-link">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></span>
+                <span class="nav-text">My Leave Requests</span>
+              </a>
+            </li>
+            <li>
+              <button type="button" class="nav-link" onclick="App.handleLogout()" style="width:100%; text-align:left; color:#F87171;">
+                <span class="nav-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg></span>
+                <span class="nav-text">Sign Out</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+
+        <div class="topbar-right">
+          <div class="user-profile-menu">
+            <div class="user-avatar" id="userAvatar">A</div>
+            <div class="user-info-text">
+              <span class="user-name-display" id="userName">User</span>
+              <span class="user-role-display" id="userRole">Role</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="App.handleLogout()"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg></button>
+        </div>
+      </header>
+
+      <div class="content-container" id="profileContent">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Employee Profile & Payslip History</h1>
+            <p class="page-subtitle">View your confidential employment details, configured salary, and download official PDF payslips.</p>
+          </div>
+        </div>
+
+        <!-- Profile Details Card -->
+        <div class="card" style="margin-bottom:2rem;">
+          <div class="card-header">
+            <h3 class="card-title">My Employment Details</h3>
+          </div>
+          <div class="card-body">
+            <div class="calc-breakdown-box" style="margin:0;">
+              <div class="breakdown-col">
+                <h4>General Profile</h4>
+                <div class="breakdown-row"><span>Full Name:</span><strong id="profileFullName">-</strong></div>
+                <div class="breakdown-row"><span>Employee ID:</span><strong id="profileCode">-</strong></div>
+                <div class="breakdown-row"><span>Email:</span><strong id="profileEmail">-</strong></div>
+                <div class="breakdown-row"><span>Phone:</span><strong id="profilePhone">-</strong></div>
+                <div class="breakdown-row"><span>Department:</span><strong id="profileDepartment">-</strong></div>
+                <div class="breakdown-row"><span>Designation:</span><strong id="profileDesignation">-</strong></div>
+                <div class="breakdown-row"><span>Joining Date:</span><strong id="profileJoiningDate">-</strong></div>
+                <div class="breakdown-row"><span>Status:</span><strong id="profileStatus">-</strong></div>
+              </div>
+              <div class="breakdown-col">
+                <h4>Bank Account Details (Confidential & Masked)</h4>
+                <div class="breakdown-row"><span>Bank Name:</span><strong id="profileBankName">-</strong></div>
+                <div class="breakdown-row"><span>Account No:</span><strong id="profileBankAccount">-</strong></div>
+                <div class="breakdown-row"><span>IFSC Code:</span><strong id="profileIfsc">-</strong></div>
+                <div class="breakdown-row"><span>PAN Number:</span><strong id="profilePan">-</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salary & Payslip History Table -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Finalized Payslips & Salary History</h3>
+            <span style="font-size:0.85rem; color:var(--color-text-muted);">Confidential - For your personal tax & financial records</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Payroll Period</th>
+                  <th>Payslip Ref</th>
+                  <th>Attendance</th>
+                  <th>Gross Salary</th>
+                  <th>Deductions</th>
+                  <th>Net Disbursed</th>
+                  <th>Download Payslip</th>
+                </tr>
+              </thead>
+              <tbody id="salaryHistoryTableBody">
+                <tr><td colspan="7" class="empty-state"><div class="spinner"></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="/js/toast.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/profile.js"></script>
+</body>
+</html>
