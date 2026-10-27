@@ -9,6 +9,7 @@ const loginLimiter = rateLimit({
   max: 10, // Max 10 attempts per IP in window
   standardHeaders: true,
   legacyHeaders: false,
+  validate: { xForwardedForHeader: false },
   message: {
     success: false,
     message: 'Too many login attempts from this IP. Please try again after 15 minutes.'
@@ -21,6 +22,7 @@ const apiLimiter = rateLimit({
   max: 120, // Max 120 requests per minute
   standardHeaders: true,
   legacyHeaders: false,
+  validate: { xForwardedForHeader: false },
   message: {
     success: false,
     message: 'Too many requests. Please slow down.'

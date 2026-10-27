@@ -8,18 +8,51 @@ require('dotenv').config();
 
 const mysql = require('mysql2/promise');
 
-const poolConfig = {
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT || '3306', 10),
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'payroll_management_db',
-  waitForConnections: true,
-  connectionLimit: 15,
-  queueLimit: 0,
-  decimalNumbers: true,
-  timezone: '+05:30'
-};
+function buildPoolConfig() {
+  const dbUrl = process.env.DATABASE_URL || process.env.MYSQL_URL;
+
+  if (dbUrl) {
+    try {
+      const parsed = new URL(dbUrl);
+      const isRemote = parsed.hostname !== 'localhost' && parsed.hostname !== '127.0.0.1';
+      return {
+        host: parsed.hostname,
+        port: parseInt(parsed.port || '3306', 10),
+        user: decodeURIComponent(parsed.username || 'root'),
+        password: decodeURIComponent(parsed.password || ''),
+        database: parsed.pathname ? parsed.pathname.replace(/^\//, '') : 'payroll_management_db',
+        waitForConnections: true,
+        connectionLimit: 15,
+        queueLimit: 0,
+        decimalNumbers: true,
+        timezone: '+05:30',
+        ssl: isRemote ? { rejectUnauthorized: false } : undefined
+      };
+    } catch (e) {
+      console.warn('[DB] Failed to parse DATABASE_URL, using individual variables.');
+    }
+  }
+
+  const host = process.env.DB_HOST || 'localhost';
+  const isRemote = host !== 'localhost' && host !== '127.0.0.1';
+  const useSsl = process.env.DB_SSL === 'true' || (isRemote && process.env.DB_SSL !== 'false');
+
+  return {
+    host,
+    port: parseInt(process.env.DB_PORT || '3306', 10),
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'payroll_management_db',
+    waitForConnections: true,
+    connectionLimit: 15,
+    queueLimit: 0,
+    decimalNumbers: true,
+    timezone: '+05:30',
+    ssl: useSsl ? { rejectUnauthorized: false } : undefined
+  };
+}
+
+const poolConfig = buildPoolConfig();
 
 let pool = null;
 let isConnected = false;

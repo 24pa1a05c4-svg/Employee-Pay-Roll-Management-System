@@ -29,6 +29,9 @@ const userRoutes = require('./src/routes/userRoutes');
 
 const app = express();
 
+// Trust reverse proxy headers (Required on Render, Heroku, AWS, Cloudflare)
+app.set('trust proxy', 1);
+
 // Security Headers with Helmet
 app.use(
   helmet({
