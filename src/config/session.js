@@ -3,16 +3,32 @@
  * Uses express-session with FileStore for session persistence
  */
 const session = require('express-session');
-const FileStore = require('session-file-store')(session);
 const path = require('path');
 
+let store;
+// In serverless / memory store mode or test mode
+if (process.env.SESSION_STORE === 'memory' || process.env.NODE_ENV === 'test') {
+  store = new session.MemoryStore();
+} else {
+  try {
+    const FileStore = require('session-file-store')(session);
+    store = new FileStore({
+      path: path.join(__dirname, '../../sessions'),
+      ttl: 24 * 60 * 60, // 24 hours
+      retries: 5,
+      factor: 1,
+      minTimeout: 50,
+      maxTimeout: 250,
+      reapInterval: -1, // Disable automatic reaping to avoid file lock collisions
+      logFn: () => {}
+    });
+  } catch {
+    store = new session.MemoryStore();
+  }
+}
+
 const sessionConfig = {
-  store: new FileStore({
-    path: path.join(__dirname, '../../sessions'),
-    ttl: 24 * 60 * 60, // 24 hours
-    retries: 2,
-    logFn: () => {} // Silence verbose file store logs
-  }),
+  store,
   name: 'payroll.sid',
   secret: process.env.SESSION_SECRET || 'fallback_payroll_management_secret_key_98234710',
   resave: false,

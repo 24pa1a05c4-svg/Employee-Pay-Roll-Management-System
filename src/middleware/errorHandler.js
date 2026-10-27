@@ -13,6 +13,11 @@ function notFoundHandler(req, res, next) {
 }
 
 function errorHandler(err, req, res, next) {
+  // If response headers were already sent, delegate to default Express handler
+  if (res.headersSent) {
+    return next(err);
+  }
+
   // Log error internally for debugging
   console.error('[SERVER ERROR]', err);
 
